@@ -1,0 +1,49 @@
+---------Merging the master to develop branch in github ---------
+git checkout master 
+git merge develop
+git push -u origin master
+-----------------------------------------------------------
+---------To create feature branch---------
+git flow init
+git flow feature start "FeatureBarnchName"
+git flow feature publish "FeatureBarnchName" --to move the created branch into the remote directory
+git flow feature finish "FeatureBarnchName"
+git branch
+git flow release start RELEASE [BASE]
+git tag -d sprint_1
+-----------------------------------------------------------
+---------Deleteing the branches in git---------
+git branch -a
+git remote -v
+--Deleting local branch
+git branch -d ML_950 
+--Delete remote and local branch
+git push origin --delete feature/ML_1
+-----------------------------------------------------------
+In order to stay on top of changes (i.e. resolve conflicts) I find I need to keep the feature branches I'm actively working on up to date with develop.
+To do this I run these commands a couple times a day:
+
+git checkout develop
+git pull
+git checkout feature/foo 
+git merge develop 
+git push
+
+Git stash apply
+----------------------------------------------------
+git diff remotes/origin/develop
+
+Merge the feature to develop
+git checkout develop
+git pull
+git merge --no-ff feature/ERDMJ-3554_GDM
+Git push   or  gitpush origin develop
+----------------------------------------------------
+Create the branch on your local machine and switch in this branch :
+$ git checkout -b [name_of_your_new_branch]
+Change working branch :
+$ git checkout [name_of_your_new_branch]
+Push the branch on github :
+$ git push origin [name_of_your_new_branch]
+When you want to commit something in your branch, be sure to be in your branch. Add -u parameter to set upstream.
+----------------------------------------------------
